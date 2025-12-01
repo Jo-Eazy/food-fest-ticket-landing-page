@@ -1,0 +1,138 @@
+:root {
+    --bg:#f6f6f6;
+    --text: #222;
+    --card-bg: #fff;
+    --featured: #ffaf40;
+    transition: background 3s ease, color 3s ease;
+}
+
+.dark {
+    --bg: #1e1e1e;
+    --text: #f1f1f1;
+    --card-bg: #2c2c2c;
+    --featured: #ffbf57;
+    transition: background 3s ease, color 3s ease;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 3s ease, color 3s ease;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+/* Header Styling */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+.header p {
+    color: var(--text);
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Ticket Card Grid Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+}
+
+/* Ticket Card Styling */
+.ticket-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.ticket-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
+
+.featured {
+    background: var(--featured);
+    color: #fff;
+}
+
+.featured .price {
+    color: #ffecec;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.benefits {
+    margin-top: 15px;
+    padding-left: 18px;
+    color: #333;
+}
+
+.benefits li {
+    margin-bottom: 6px;
+}
+
+/* Favourite Styling */
+.fav-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.fav-btn:hover {
+    opacity: 0.6;
+}
+
+.filled {
+    color: gold;
+}
